@@ -3,8 +3,8 @@
 
 class HomepagerExtension < Spree::Extension
   version "1.0"
-  description "Describe your extension here"
-  url "http://yourwebsite.com/homepager"
+  description "Spree extension to create a homepage with some 'featured' products."
+  url "http://github.com/pero-ict/spree-homepager-extension"
 
   # Please use homepager/config/routes.rb instead for extension routes.
 
@@ -13,10 +13,10 @@ class HomepagerExtension < Spree::Extension
   # end
   
   def activate
-
-    # make your helper avaliable in all views
-    # Spree::BaseController.class_eval do
-    #   helper YourHelper
-    # end
+    
+    Product.class_eval do
+      named_scope :on_homepage,:conditions => ["show_on_homepage = ?", true]
+    end
+    
   end
 end
