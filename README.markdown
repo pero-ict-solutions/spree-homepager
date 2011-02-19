@@ -1,3 +1,0 @@
-= Homepager
-
-Description goes here

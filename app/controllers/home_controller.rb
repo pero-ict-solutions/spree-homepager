@@ -4,5 +4,4 @@ class HomeController < Spree::BaseController
   def index
     @products = Product.on_homepage.active
   end
-
 end
