@@ -5,14 +5,14 @@ class Admin::BannersController < Admin::BaseController
     params[:banner].each_with_index do |id, index|
       Banner.update_all(['position=?', index+1], ['id=?', id])
     end
-
-    respond_to do |format|
-      format.js do 
-        render :update do |page|
-          page.visual_effect :highlight, "banners"
-        end
-      end
-    end  
+  end
+  
+  create.response do |wants|
+    wants.html { redirect_to collection_url }
+  end
+  
+  update.response do |wants|
+    wants.html { redirect_to collection_url }
   end
   
 end

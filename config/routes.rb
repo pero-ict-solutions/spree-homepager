@@ -2,8 +2,12 @@ Rails.application.routes.draw do
   
   root :controller => "home", :action => "index"
 
-  namespace :admin do |admin|
-    resources :banners, :collection => { :reorder => :any}
+  namespace :admin do
+    resources :banners do
+      collection do
+        post :reorder
+      end
+    end
   end
   
 end
