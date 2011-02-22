@@ -1,0 +1,16 @@
+<% f.field_container :tagline do %>
+  <%= f.label :tagline, t("tagline") %><br />
+  <%= f.text_field :tagline  %>
+  <%= f.error_message_on :tagline%>
+<% end %>
+
+<% f.field_container :target_url do %>
+  <%= f.label :target_url, t("target_url") %><br />
+  <%= f.text_field :target_url  %>
+  <%= f.error_message_on :target_url %>
+<% end %>
+
+<%f.field_container :image do%>
+  <%= f.label :image, t("image")%> <br />
+  <%= f.file_field :image%>
+<%end%>
