@@ -1,0 +1,11 @@
+<%= render :partial => 'admin/shared/configuration_menu' %>
+
+<h1><%= t("editing_banner") %></h1>
+<%= render "shared/error_messages", :target => @banner %>
+
+<% form_for(:banner, :url => object_url, :html => { :method => :put, :multipart => true }) do |f| %>
+  <%= render :partial => "form", :locals => { :f => f } %>
+  <p class="form-buttons">
+    <%= button t("update") %> <%= link_to t('cancel'), collection_url %>
+  </p>
+<% end %>

@@ -1,0 +1,78 @@
+<div class='toolbar'>
+  <ul class='actions'>
+    <li>
+      <p><%= button_link_to t("new_banner"), new_object_url, :icon => 'add' %></p>
+    </li>
+  </ul>
+  <br class='clear' />
+</div>
+
+
+<h1><%= t("listing_banners") %></h1>
+
+<p><%=t("reorder_explain")%></p>
+<table id="banners" class="index">
+  <thead>
+  <tr>
+    <th>
+      <%= t("reorder")%>
+    </th>
+    <th>
+      <%= t("image")%>      
+    </th>
+    <th>
+      <%= t("tagline")%>
+    </th>
+    <th>
+      <%= t("target_url")%>
+    </th>
+    <th>&nbsp;</th>
+  </tr>
+  </thead>
+  <tbody>
+    <% @banners.each do |banner|%>
+      <tr id="<%= dom_id banner %>">
+        <td><span class="handle">[drag]</span></td>
+        <td><%= link_to(image_tag(banner.image.url(:thumb)), banner.image.url(:banner)) %></td>
+        <td><%=banner.tagline%></td>        
+        <td><%=banner.target_url%></td>
+        <td>
+          <%=link_to_edit banner%> &nbsp;
+          <%=link_to_delete banner%>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<script type="text/javascript" charset="utf-8">
+  
+  var fixWidthHelper = function(e, ui) {
+      ui.children().each(function() {
+        $(this).width($(this).width());
+      });
+      return ui;
+  };
+  
+  $(function() {
+    $("#banners tbody").sortable({
+      axis: 'y',
+      handle: '.handle',
+      cursor: "move",
+      helper: fixWidthHelper,
+      
+      update: function(){
+        $.ajax({
+          type: 'post', 
+          data: $('#banners tbody').sortable('serialize'), 
+          dataType: 'script',
+          complete: function(request){
+            $('#banners tbody').effect('highlight');
+          },
+          url: "<%=reorder_admin_banners_url%>"
+        })
+      }
+		}).disableSelection();
+  });
+  
+</script>
