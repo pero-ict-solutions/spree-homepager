@@ -1,0 +1,8 @@
+#banner-slideshow .banner .tagline{
+  position:absolute;
+  bottom:0px;
+  width:740px;
+  font-size:20px;
+  color:#fff;
+  padding-left:10px;
+}

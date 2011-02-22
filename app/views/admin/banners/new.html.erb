@@ -1,0 +1,8 @@
+<%= error_messages_for :banner %>
+<h1><%= t("new_banner") %></h1>
+<% form_for(:banner, :url => collection_url, :html => { :multipart => true }) do |f| %>
+  <%= render :partial => "form", :locals => { :f => f } %>
+  <p class="form-buttons">
+    <%= button t("create") %> <%= link_to t('cancel'), collection_url %>
+  </p>
+<% end %>
