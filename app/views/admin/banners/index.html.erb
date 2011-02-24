@@ -18,13 +18,16 @@
       <%= t("reorder")%>
     </th>
     <th>
-      <%= t("image")%>      
+      <%= t("image")%>
     </th>
     <th>
       <%= t("tagline")%>
     </th>
     <th>
       <%= t("target_url")%>
+    </th>
+    <th>
+      <%= t("visible")%>
     </th>
     <th>&nbsp;</th>
   </tr>
@@ -34,8 +37,9 @@
       <tr id="<%= dom_id banner %>">
         <td><span class="handle">[drag]</span></td>
         <td><%= link_to(image_tag(banner.image.url(:thumb)), banner.image.url(:banner)) %></td>
-        <td><%=banner.tagline%></td>        
+        <td><%=banner.tagline%></td>
         <td><%=banner.target_url%></td>
+        <td><%=banner.visible%></td>
         <td>
           <%=link_to_edit banner%> &nbsp;
           <%=link_to_delete banner%>
@@ -46,25 +50,25 @@
 </table>
 
 <script type="text/javascript" charset="utf-8">
-  
+
   var fixWidthHelper = function(e, ui) {
       ui.children().each(function() {
         $(this).width($(this).width());
       });
       return ui;
   };
-  
+
   $(function() {
     $("#banners tbody").sortable({
       axis: 'y',
       handle: '.handle',
       cursor: "move",
       helper: fixWidthHelper,
-      
+
       update: function(){
         $.ajax({
-          type: 'post', 
-          data: $('#banners tbody').sortable('serialize'), 
+          type: 'post',
+          data: $('#banners tbody').sortable('serialize'),
           dataType: 'script',
           complete: function(request){
             $('#banners tbody').effect('highlight');
@@ -74,5 +78,5 @@
       }
 		}).disableSelection();
   });
-  
+
 </script>

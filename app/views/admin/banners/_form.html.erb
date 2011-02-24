@@ -10,7 +10,12 @@
   <%= f.error_message_on :target_url %>
 <% end %>
 
-<%f.field_container :image do%>
+<% f.field_container :image do %>
   <%= f.label :image, t("image")%> <br />
   <%= f.file_field :image%>
-<%end%>
+<% end %>
+
+<% f.field_container :visible do %>
+  <%= f.label :visible, t("visible") %><br />
+  <%= f.check_box :visible %>
+<% end %>
