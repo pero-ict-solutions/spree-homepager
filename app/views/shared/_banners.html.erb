@@ -1,5 +1,5 @@
 <div id="banner-slideshow">
-  <% Banner.all.each do |banner| -%>
+  <% Banner.visible.each do |banner| -%>
     <div class="banner">
       <div class="tagline"><%=banner.tagline%></div>
       <%if banner.target_url.empty?%>
@@ -18,5 +18,5 @@ $(document).ready(function() {
 		speed: 1000,
 		timeout: 1000
 	});
-});  
+});
 </script>
