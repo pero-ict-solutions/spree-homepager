@@ -8,7 +8,11 @@ Installation
 
 Add this to your Gemfile:
 
-      gem "spree-homepager", :git => "git://github.com/pero-ict/spree-homepager.git", :require => "homepager"  
+      gem "spree-homepager", :require => "homepager"
+
+Or if you need the edge git repo:
+
+      gem "spree-homepager", :git => "git://github.com/pero-ict-solutions/spree-homepager.git", :require => "homepager"  
 
 Next run:
 
