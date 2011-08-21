@@ -1,7 +1,7 @@
 Homepager
 =========
 
-Spree extension that creates a homepage and enables a shop owner to place products on that homepage.
+Spree extension that creates a homepage and enables a shop owner to place products and rotating banners on that homepage.
 
 Installation
 ============
@@ -13,9 +13,9 @@ Add this to your Gemfile:
 Next run:
 
     bundle install
-    rake homepager:install  
-    rake db:migrate  
+    rails g homepager:install
 
-This will add a checkbox on the product edit page that you can check on to make the product appear on the homepage
+This will add a checkbox on the product edit page that you can check on to make the product appear on the homepage.
+It will also add a admin tab called "Banners", here you can upload banners so they can rotate on your homepage.
 
 Copyright (c) 2011 PeRo ICT Solutions, released under the New BSD License
