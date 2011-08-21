@@ -14,8 +14,6 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  s.has_rdoc = true
-
   s.add_dependency('spree_core')
   s.add_dependency('formtastic')
 end
