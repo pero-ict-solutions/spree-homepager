@@ -11,31 +11,22 @@
 <h1><%= t("listing_banners") %></h1>
 
 <p><%=t("reorder_explain")%></p>
+
 <table id="banners" class="index">
   <thead>
   <tr>
-    <th>
-      <%= t("reorder")%>
-    </th>
-    <th>
-      <%= t("image")%>
-    </th>
-    <th>
-      <%= t("tagline")%>
-    </th>
-    <th>
-      <%= t("target_url")%>
-    </th>
-    <th>
-      <%= t("visible")%>
-    </th>
+    <th><%= t("reorder")%></th>
+    <th><%= t("image")%></th>
+    <th><%= t("tagline")%></th>
+    <th><%= t("target_url")%></th>
+    <th><%= t("visible")%></th>
     <th>&nbsp;</th>
   </tr>
   </thead>
   <tbody>
     <% @banners.each do |banner|%>
-      <tr id="<%= dom_id banner %>">
-        <td><span class="handle">[<%= t(:drag) %>]</span></td>
+      <tr id="<%= dom_id banner %>" class="<%=cycle('even', 'odd') %>">
+        <td><span class="handle"></span></td>
         <td><%= link_to(image_tag(banner.image.url(:thumb)), banner.image.url(:banner)) %></td>
         <td><%=banner.tagline%></td>
         <td><%=banner.target_url%></td>

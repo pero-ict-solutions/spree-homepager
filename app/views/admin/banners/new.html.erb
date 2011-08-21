@@ -1,11 +1,10 @@
-<%= render :partial => 'admin/shared/configuration_menu' %>
-
 <h1><%= t("new_banner") %></h1>
-
 <%= render "shared/error_messages", :target => @banner %>
-<% form_for(:banner, :url => collection_url, :html => { :multipart => true }) do |f| %>
+
+<%= semantic_form_for([:admin, @banner]) do |f| %>
   <%= render :partial => "form", :locals => { :f => f } %>
   <p class="form-buttons">
-    <%= button t("create") %> <%= link_to t('cancel'), collection_url %>
+    <%= button t("actions.create"), nil, "submit"%>
+    <%= t("or") %> <%= link_to t("actions.cancel"), admin_banners_path %>
   </p>
 <% end %>

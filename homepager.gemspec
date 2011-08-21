@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree-homepager'
-  s.version     = '0.50.0'
+  s.version     = '0.70.99'
   s.summary     = 'Spree extension that creates a homepage and enables a shop owner to place products on that homepage.'
   s.required_ruby_version = '>= 1.8.7'
 
@@ -17,4 +17,5 @@ Gem::Specification.new do |s|
   s.has_rdoc = true
 
   s.add_dependency('spree_core')
+  s.add_dependency('formtastic')
 end

@@ -12,7 +12,7 @@ Add this to your Gemfile:
 
 Next run:
 
-    bundle install  
+    bundle install
     rake homepager:install  
     rake db:migrate  
 

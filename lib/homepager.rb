@@ -1,5 +1,6 @@
 require 'spree_core'
 require 'homepager_hooks'
+require 'formtastic'
 
 module Homepager
   class Engine < Rails::Engine
