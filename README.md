@@ -1,6 +1,8 @@
 Homepager
 =========
 
+[![Build Status](https://secure.travis-ci.org/pero-ict-solutions/spree-homepager.png)](http://travis-ci.org/pero-ict-solutions/spree-homepager)
+
 Spree extension that creates a homepage and enables a shop owner to place products and rotating banners on that homepage.
 
 Installation
