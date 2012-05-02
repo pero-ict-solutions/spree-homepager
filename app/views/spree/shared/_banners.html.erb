@@ -1,7 +1,7 @@
 <div id="banner-slideshow">
-  <% Banner.visible.each do |banner| -%>
+  <% Spree::Banner.visible.each do |banner| -%>
     <div class="banner">
-      <div class="tagline"><%=banner.tagline%></div>
+      <div class="tagline"><%= banner.tagline %></div>
       <%if banner.target_url.empty?%>
         <%=image_tag( banner.image.url(:original)) %>
       <%else%>

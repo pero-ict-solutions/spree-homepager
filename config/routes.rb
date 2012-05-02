@@ -1,5 +1,4 @@
-Rails.application.routes.draw do
-  
+Spree::Core::Engine.routes.prepend do
   root :controller => "home", :action => "index"
 
   namespace :admin do
@@ -8,6 +7,5 @@ Rails.application.routes.draw do
         post :reorder
       end
     end
-  end
-  
+  end	
 end
