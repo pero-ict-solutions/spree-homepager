@@ -1,0 +1,58 @@
+<%
+# TODO: Change the table class sortable-temp to sortable and remove the redundant script below once spree is updated to the latest version
+%>
+
+<%= render :partial => 'spree/admin/shared/product_sub_menu' %>
+
+<h1><%= t(:home) %></h1>
+
+<p><%=t(:homeproducts_reorder)%></p>
+
+<table class="index sortable-temp" data-sortable-link="<%= update_positions_admin_homeproducts_url %>">
+  <thead>
+  <tr>
+    <th><%= t(:reorder)%></th>
+    <th><%= t(:product_name)%></th>
+    <th>&nbsp;</th>
+  </tr>
+  </thead>
+  <tbody>
+    <% @home_products = Spree::Product.on_homepage 
+			 @home_products.each do |product| %>
+      <tr id="<%= dom_id product %>">
+        <td><span class="handle"></span></td>
+        <td><%= product.name %></td>
+        <td>
+					<%= link_to_delete product, {:name => icon('delete') + ' ' + t(:remove_from_home), :url => admin_homeproduct_url(product.id) }%>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<script type="text/javascript" charset="utf-8">
+$('table.sortable-temp').ready(function(){
+  $('table.sortable-temp tbody').sortable(
+    {
+      handle: '.handle',
+      update: function(event, ui) {
+        $("#progress").show();
+        positions = {};
+        $.each($('table.sortable-temp tbody tr'), function(position, obj){
+          reg = /spree_(\w+_?)+_(\d+)/;
+          parts = reg.exec($(obj).attr('id'));
+          if (parts) {
+            positions['positions['+parts[2]+']'] = position;
+          }
+        });
+        $.ajax({
+          type: 'POST',
+          dataType: 'script',
+          url: $(ui.item).closest("table.sortable-temp").data("sortable-link"),
+          data: positions,
+          success: function(data){ $("#progress").hide(); }
+        });
+      }
+    });
+});
+</script>

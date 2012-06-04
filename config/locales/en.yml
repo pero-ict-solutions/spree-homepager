@@ -5,6 +5,7 @@
     banners: Banners
     banner: Banner
     listing_banners: Listing banners
+    home: Homepage products
     position: Position
     tagline: Tagline
     target_url: Target URL
@@ -12,5 +13,9 @@
     editing_banner: Editing banner
     reorder: Reorder
     reorder_explain: Drag the banners up and down to adjust the order in which they are displayed
+    homeproducts_reorder: Drag the products up and down to adjust the order in which they are displayed
+    position_updated: Homepage product display order updated!
+    remove_from_home: Remove from homepage
+    successfully_removed_from_homepage: Product successfully removed from homepage
     visible: Visible
     drag: drag
