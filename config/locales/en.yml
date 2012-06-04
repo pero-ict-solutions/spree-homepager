@@ -1,16 +1,17 @@
 ---
   en:
-    ext_homepager:
-    show_on_homepage: "Show on homepage"
-    listing_banners: Listing banners
-    homepage_products: Homepage products
-    position: Position
-    tagline: Tagline
-    target_url: Target URL
-    reorder: Reorder
-    homeproducts_reorder: Drag the products up and down to adjust the order in which they are displayed
-    position_updated: Homepage product display order updated!
-    remove_from_home: Remove from homepage
-    successfully_removed_from_homepage: Product successfully removed from homepage
-    visible: Visible
-    drag: drag
+    homeproducts: Homepage products
+    spree_homepager:
+      show_on_homepage: Show on homepage
+      homepage_products: Homepage products
+      listing_banners: Listing banners
+      position: Position
+      tagline: Tagline
+      target_url: Target URL
+      reorder: Reorder
+      homeproducts_reorder: Drag the products up and down to adjust the order in which they are displayed
+      position_updated: Homepage product display order updated!
+      remove_from_home: Remove from homepage
+      successfully_removed_from_homepage: Product successfully removed from homepage
+      visible: Visible
+      drag: drag

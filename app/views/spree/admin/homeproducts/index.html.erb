@@ -3,16 +3,19 @@
 %>
 
 <%= render :partial => 'spree/admin/shared/product_sub_menu' %>
+<script type="text/javascript" charset="utf-8">
+	$("div#admin-menu ul li a:contains('Products')").parent().addClass('selected')
+</script>
 
-<h1><%= t(:homepage_products) %></h1>
+<h1><%= t('spree_homepager.homepage_products') %></h1>
 
-<p><%=t(:homeproducts_reorder)%></p>
+<p><%=t('spree_homepager.homeproducts_reorder')%></p>
 
 <table class="index sortable-temp" data-sortable-link="<%= update_positions_admin_homeproducts_url %>">
   <thead>
   <tr>
-    <th><%= t(:reorder)%></th>
-    <th><%= t(:product_name)%></th>
+    <th><%= t('spree_homepager.reorder')%></th>
+    <th><%= t('spree_homepager.product_name')%></th>
     <th>&nbsp;</th>
   </tr>
   </thead>
@@ -23,7 +26,7 @@
         <td><span class="handle"></span></td>
         <td><%= product.name %></td>
         <td>
-					<%= link_to_delete product, {:name => icon('delete') + ' ' + t(:remove_from_home), :url => admin_homeproduct_url(product.id) }%>
+					<%= link_to_delete product, {:name => icon('delete') + ' ' + t('spree_homepager.remove_from_home'), :url => admin_homeproduct_url(product.id) }%>
         </td>
       </tr>
     <% end %>
