@@ -10,7 +10,7 @@ Installation
 
 Add this to your Gemfile:
 
-      gem 'spree_homepager', :git => 'git://github.com/buddhi-desilva/spree-homepager.git'
+      gem 'spree-homepager', :git => 'git://github.com/buddhi-desilva/spree-homepager.git'
 
 Next run:
 
