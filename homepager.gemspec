@@ -8,10 +8,9 @@ Gem::Specification.new do |s|
   s.summary     = 'Spree extension that creates a homepage and enables a shop owner to place products on that homepage.'
   s.required_ruby_version = '>= 1.9.3'
 
-  s.author            = 'Peter Berkenbosch'
+  s.author            = 'Peter Berkenbosch, Buddhi DeSilva'
   s.email             = 'peter@pero-ict.nl'
-  s.homepage          = 'http://www.pero-ict.nl'
-  s.rubyforge_project = 'spree-homepager'
+  s.homepage          = 'http://github.com/buddhi-desilva/spree-homepager'
 
   s.files        = Dir['CHANGELOG', 'README.md', 'LICENSE', 'lib/**/*', 'app/**/*']
   s.require_path = 'lib'

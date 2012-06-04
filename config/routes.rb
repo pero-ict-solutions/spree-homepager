@@ -9,12 +9,6 @@ Spree::Core::Engine.routes.prepend do
 			end
 		end
 		
-    resources :banners do
-      collection do
-        post :reorder
-      end
-    end
-
   end	
 
 end
